@@ -1,0 +1,28 @@
+img {
+  display: block;
+  max-width: 100%;
+}
+
+@mixin device($device) {
+  @if $device == mobile {
+    @media (max-width: 375px) {
+      @content;
+    }
+  }
+  @else if $device == tablet {
+    @media (max-width: 768px) {
+      @content
+    }
+  }
+  @else if $device == desktop {
+    @media (max-width: 900px) {
+      @content
+    }
+  }
+}
+
+@mixin dinamicMediaQuerie($width) {
+  @media (max-width: $width) {
+    @content
+  }
+}

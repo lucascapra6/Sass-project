@@ -1,0 +1,26 @@
+$default-font: "PT Mono";
+$secundary-font: "Aref Ruqaa";
+
+@function convertedToEm($pixel, $context: 16) {
+  @return ($pixel / $context) + em
+}
+
+@mixin font-tipo1($size) {
+  font-family: $default-font;
+  @if $size == 18 {
+    font-size: convertedToEm(18);
+    line-height: convertedToEm(30, 18); //o contexto muda para 18px
+  }
+}
+
+@mixin font-tipo2($size) {
+  font-family: $secundary-font;
+  @if $size == 18 {
+    font-size: convertedToEm(18);
+    line-height: convertedToEm(30, 18); //o contexto muda para 18px
+  }
+  @if $size == 24 {
+    font-size: convertedToEm(24);
+    line-height: convertedToEm(18);
+  }
+}

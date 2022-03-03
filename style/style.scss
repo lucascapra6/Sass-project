@@ -1,0 +1,67 @@
+@import "reset";
+@import "fonts.css";
+@import "fonts";
+@import "collors";
+@import "responsive.scss";
+@import "_intro.scss";
+@import "_menu.scss";
+@import "_contato.scss";
+@import "shadow";
+
+body {
+  display: flex;
+  flex-direction: column;
+  border: 12px solid $border-collor;
+  background: $background-collor;
+  padding: 0px 50px;
+
+  @include device(mobile) {
+    border: none;
+  }
+}
+p {
+  @include font-tipo1(18)
+}
+
+.container-menu{
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 80px;
+  gap: 280px;
+  @include dinamicMediaQuerie(1200px) {
+    gap: 120px;
+  }
+  @include device(tablet) {
+    display: block;
+  }
+}
+.column-1-section {
+  width: 30%;
+}
+.column-2-section {
+  width: 70%;
+}
+
+.title {
+  @include font-tipo1(18);
+  text-transform: uppercase;
+  display: flex;
+  &::after { //essa estilização deve ficar exatamente no elemento que deseja colocá-lo
+    content: '';
+    display: block;
+    width: 70%;
+    height: 2px;
+    background: black;
+    float: right;
+    margin-top: 15px;
+    margin-left: 20px;
+  }
+}
+
+.border-img {
+    border: 12px solid $border-collor;
+}
+.border-radius-50 {
+  border-radius: 50%;
+}

@@ -1,0 +1,51 @@
+.container-contato{
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 80px;
+  gap: 280px;
+  @include dinamicMediaQuerie(1200px) {
+    gap: 120px;
+  }
+  @include device(tablet) {
+    display: block;
+  }
+}
+.column1-contato {
+  width: 30%;
+}
+.column2-contato {
+  width: 100%; //atentar-se ao tamanho para que os labels fiquem em cima dos inputs
+  max-width: 400px;
+}
+
+form {
+  label {
+    font-family: $default-font;
+    font-size: convertedToEm(18);
+    display: block;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  input, textarea {
+    width: 100%;
+    border: 2px solid $border-collor;
+    height: 20px;
+  }
+}
+button {
+  margin-left: 12px;
+  width: 200px;
+  height: 40px;
+  margin-top: 10px;
+  background: $background-collor;
+  border: 2px solid $border-collor;
+  box-shadow: 1px 1px 0 0 $border-collor;
+}
+.email-tel {
+  display: flex;
+  gap: 5px;
+  @include device(tablet) {
+    display: block;
+  }
+}
